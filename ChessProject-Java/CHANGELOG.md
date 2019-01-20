@@ -72,6 +72,8 @@ considered Black color at the Top and White color at the Bottom.
 
 - New class created to manage the application constants.
 
+- Adding functionality to double jump for Pawns if they are in the initial position.
+
 ### Additional comments
 
 - There are different naming conventions for the methods used for testing. I decided to follow with the one used, but it
