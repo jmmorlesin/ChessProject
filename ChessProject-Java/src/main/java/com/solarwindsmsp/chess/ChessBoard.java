@@ -6,12 +6,12 @@ import static com.solarwindsmsp.chess.Constants.INVALID_COORDINATE;
 
 public class ChessBoard {
 
-    private Piece[][] pieces;
+    private Piece[][] positions;
     private int maxWidth;
     private int maxHeight;
 
     public ChessBoard() {
-        pieces = new Pawn[MAX_BOARD_WIDTH][MAX_BOARD_HEIGHT];
+        positions = new Piece[MAX_BOARD_WIDTH][MAX_BOARD_HEIGHT];
         maxWidth = MAX_BOARD_WIDTH;
         maxHeight = MAX_BOARD_HEIGHT;
     }
@@ -35,7 +35,7 @@ public class ChessBoard {
     public void add(Piece piece, int xCoordinate, int yCoordinate) {
         if (this.isLegalBoardPosition(xCoordinate, yCoordinate) && this.isEmpty(xCoordinate, yCoordinate)) {
             piece.setCoordinates(xCoordinate, yCoordinate);
-            pieces[xCoordinate][yCoordinate] = piece;
+            positions[xCoordinate][yCoordinate] = piece;
         } else {
             piece.setCoordinates(INVALID_COORDINATE, INVALID_COORDINATE);
         }
@@ -47,7 +47,7 @@ public class ChessBoard {
     }
 
     private boolean isEmpty(int xCoordinate, int yCoordinate) {
-        return (pieces[xCoordinate][yCoordinate] == null);
+        return (positions[xCoordinate][yCoordinate] == null);
     }
 
 
