@@ -15,11 +15,8 @@ public class Pawn extends Piece {
     private boolean isValidMovement(MovementType movementType, int newX, int newY) {
         switch (movementType) {
             case MOVE:
-                if (this.getInitialPosition().equals(InitialPosition.BOTTOM)) {
-                    return (newX == this.getXCoordinate() && newY == this.getYCoordinate() + 1);
-                } else {
-                    return (newX == this.getXCoordinate() && newY == this.getYCoordinate() - 1);
-                }
+                int numberPositions = this.getInitialPosition().equals(InitialPosition.BOTTOM) ? 1 : -1;
+                return (newX == this.getXCoordinate() && newY == this.getYCoordinate() + numberPositions);
             case CAPTURE:
                 //TODO
                 return false;
