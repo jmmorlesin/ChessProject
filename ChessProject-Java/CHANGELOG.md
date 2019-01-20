@@ -1,10 +1,10 @@
 # Changelog
 
-## Version: 0.0.1 - January 2019
+## Version: 1.0-SNAPSHOT - January 2019
 
 ### Changed
 
-- Set language level to 7 from 5 (Used System.lineSeparator - Another option it could be change the method by 
+- Set language level to 8 from 5 (Used System.lineSeparator - Another option it could be change the method by 
 System.getProperty("line.separator") - Reference: 
 https://dzone.com/articles/prefer-systemlineseparator-for-writing-system-depe)
 
@@ -45,14 +45,40 @@ there is no point in throw the more general Exception in this case.
 
 - Removed semicolon from enumeration definitions, not needed.
 
+- String format fixed to implement the toString functionality in the Pawn class. Use of String.join to use the lines
+separator between the strings to concatenate (String.join requires Java version 8).
+
+- Max height and width by default use the values defined in constants, the constructor in ChessBoard can decide doing 
+something different.
+
+- Removed the color from the add method in the ChessBoard class, there is no need. In case we need it, the color is 
+included in the piece itself.
+
+- Pawn now it has as a parent class Piece, with all the common functionality and properties for another types of pieces.
+
+
 ### Added
+
 - Implemented method isLegalBoardPosition in ChessBoard class.
+
 - New method to make it easier set the coordinates of a piece (setCoordinates).
+
 - Added new method isEmpty in ChessBoard to validate if the position is empty.
+
 - Added in Pawn a new attribute to specify the initial position in the board (top or bottom). By default it will be 
 considered Black color at the Top and White color at the Bottom.
 
+- Created new Piece class to manage all the shared functionality and properties from pieces.
+
+- New class created to manage the application constants.
 
 ### Additional comments
+
 - There are different naming conventions for the methods used for testing. I decided to follow with the one used, but it
 could be something to discuss.
+
+- At the moment, there are a lot of public methods, depending on the case, we should consider if this is the right 
+visibility level.
+
+- I upgraded the Java level to 8, but as a design decision, if this is a problem, multiple ways can be found to do the
+same functionality.

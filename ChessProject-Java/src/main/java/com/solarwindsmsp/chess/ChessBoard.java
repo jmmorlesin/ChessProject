@@ -1,25 +1,43 @@
 package com.solarwindsmsp.chess;
 
+import static com.solarwindsmsp.chess.Constants.MAX_BOARD_WIDTH;
+import static com.solarwindsmsp.chess.Constants.MAX_BOARD_HEIGHT;
+import static com.solarwindsmsp.chess.Constants.INVALID_COORDINATE;
+
 public class ChessBoard {
 
-    public static int MAX_BOARD_WIDTH = 8;
-    public static int MAX_BOARD_HEIGHT = 8;
-    //TODO move
-    public static int INVALID_COORDINATE = -1;
-
-    private Pawn[][] pieces;
+    private Piece[][] pieces;
+    private int maxWidth;
+    private int maxHeight;
 
     public ChessBoard() {
         pieces = new Pawn[MAX_BOARD_WIDTH][MAX_BOARD_HEIGHT];
-
+        maxWidth = MAX_BOARD_WIDTH;
+        maxHeight = MAX_BOARD_HEIGHT;
     }
 
-    public void add(Pawn pawn, int xCoordinate, int yCoordinate, PieceColor pieceColor) {
+    public int getMaxWidth() {
+        return maxWidth;
+    }
+
+    private void setMaxWidth(int maxWidth) {
+        this.maxWidth = maxWidth;
+    }
+
+    public int getMaxHeight() {
+        return maxHeight;
+    }
+
+    private void setMaxHeight(int maxHeight) {
+        this.maxHeight = maxHeight;
+    }
+
+    public void add(Piece piece, int xCoordinate, int yCoordinate) {
         if (this.isLegalBoardPosition(xCoordinate, yCoordinate) && this.isEmpty(xCoordinate, yCoordinate)) {
-            pawn.setCoordinates(xCoordinate, yCoordinate);
-            pieces[xCoordinate][yCoordinate] = pawn;
+            piece.setCoordinates(xCoordinate, yCoordinate);
+            pieces[xCoordinate][yCoordinate] = piece;
         } else {
-            pawn.setCoordinates(INVALID_COORDINATE, INVALID_COORDINATE);
+            piece.setCoordinates(INVALID_COORDINATE, INVALID_COORDINATE);
         }
     }
 

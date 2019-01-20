@@ -18,12 +18,12 @@ public class ChessBoardTest {
 
     @Test
     public void has_MaxBoardWidth_of_8() {
-        assertEquals(8, ChessBoard.MAX_BOARD_WIDTH);
+        assertEquals(8, testSubject.getMaxWidth());
     }
 
     @Test
     public void has_MaxBoardHeight_of_8() {
-        assertEquals(8, ChessBoard.MAX_BOARD_HEIGHT);
+        assertEquals(8, testSubject.getMaxHeight());
     }
 
     @Test
@@ -66,8 +66,8 @@ public class ChessBoardTest {
     public void avoid_Duplicate_Positioning() {
         Pawn firstPawn = new Pawn(PieceColor.BLACK);
         Pawn secondPawn = new Pawn(PieceColor.BLACK);
-        testSubject.add(firstPawn, 6, 3, PieceColor.BLACK);
-        testSubject.add(secondPawn, 6, 3, PieceColor.BLACK);
+        testSubject.add(firstPawn, 6, 3);
+        testSubject.add(secondPawn, 6, 3);
         assertEquals(6, firstPawn.getXCoordinate());
         assertEquals(3, firstPawn.getYCoordinate());
         assertEquals(-1, secondPawn.getXCoordinate());
@@ -80,13 +80,13 @@ public class ChessBoardTest {
         for (int i = 0; i < 10; i++)
         {
             Pawn pawn = new Pawn(PieceColor.BLACK);
-            int row = i / ChessBoard.MAX_BOARD_WIDTH;
+            int row = i / testSubject.getMaxWidth();
 
-            testSubject.add(pawn, 7 + row, i % ChessBoard.MAX_BOARD_WIDTH, PieceColor.BLACK);
+            testSubject.add(pawn, 7 + row, i % testSubject.getMaxWidth());
             if (row < 1)
             {
                 assertEquals(7 + row, pawn.getXCoordinate());
-                assertEquals(i % ChessBoard.MAX_BOARD_HEIGHT, pawn.getYCoordinate());
+                assertEquals(i % testSubject.getMaxHeight(), pawn.getYCoordinate());
             }
             else
             {
