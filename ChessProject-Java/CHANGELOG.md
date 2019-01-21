@@ -48,9 +48,6 @@ there is no point in throw the more general Exception in this case.
 - String format fixed to implement the toString functionality in the Pawn class. Use of String.join to use the lines
 separator between the strings to concatenate (String.join requires Java version 8).
 
-- Max height and width by default use the values defined in constants, the constructor in ChessBoard can decide doing 
-something different.
-
 - Removed the color from the add method in the ChessBoard class, there is no need. In case we need it, the color is 
 included in the piece itself.
 
