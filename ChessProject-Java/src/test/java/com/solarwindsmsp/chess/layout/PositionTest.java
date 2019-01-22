@@ -1,9 +1,6 @@
 package com.solarwindsmsp.chess.layout;
 
-import com.solarwindsmsp.chess.piece.IPiece;
-import com.solarwindsmsp.chess.piece.PieceColor;
-import com.solarwindsmsp.chess.piece.PieceFactory;
-import com.solarwindsmsp.chess.piece.PieceType;
+import com.solarwindsmsp.chess.piece.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,12 +10,12 @@ import static org.junit.Assert.assertNull;
 public class PositionTest {
 
     private Position testSubject;
-    private PieceFactory pieceFactory;
+    private PieceHelper pieceHelper;
 
     @Before
     public void setUp() {
-        this.testSubject = new Position();
-        this.pieceFactory = PieceFactory.getInstance();
+        testSubject = new Position();
+        pieceHelper = new PieceHelper();
     }
 
     @Test
@@ -27,8 +24,8 @@ public class PositionTest {
     }
 
     @Test
-    public void getPieceFromPosition() throws Exception {
-        IPiece pawn = pieceFactory.getPiece(PieceType.PAWN, PieceColor.WHITE);
+    public void getPieceFromPosition() {
+        IPiece pawn = pieceHelper.getPieceMock(PieceType.PAWN, PieceColor.WHITE);
         testSubject.setPiece(pawn);
 
         assertEquals(pawn, testSubject.getPiece());

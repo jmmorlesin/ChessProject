@@ -106,7 +106,9 @@ this is with custom exceptions.
 it.
 
 - It could be interesting for the long term project the integration with Mockito or similar tool in order to do the 
-tests. At the moment, the tests have some dependencies of other classes, with mocks we could be able to create unit tests that can be tested in the isolated class without any other dependency.
+tests. At the moment, the tests have some dependencies of other classes, with mocks we could be able to create unit 
+tests that can be tested in the isolated class without any other dependency. I added a sample of Mockito in PawnTest and
+PositionTest.
 
 - As a consideration, Javadoc could be added as well into the code. At the moment I tried to follow the convention about
 do code as readable as possible. 
