@@ -24,10 +24,10 @@ public class ChessBoardTest {
 
     @Before
     public void setUp() {
-        this.testSubject = new ChessBoard();
-        this.pieceFactory = PieceFactory.getInstance();
-        this.coordinate = new Coordinate(1, 1);
-        this.movementType = MovementType.MOVE;
+        testSubject = new ChessBoard();
+        pieceFactory = PieceFactory.getInstance();
+        coordinate = new Coordinate(1, 1);
+        movementType = MovementType.MOVE;
     }
 
     @Test

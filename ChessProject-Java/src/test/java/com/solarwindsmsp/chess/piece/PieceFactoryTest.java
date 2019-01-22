@@ -11,7 +11,7 @@ public class PieceFactoryTest {
 
     @Before
     public void setUp() {
-        this.testSubject = PieceFactory.getInstance();
+        testSubject = PieceFactory.getInstance();
     }
 
     @Test

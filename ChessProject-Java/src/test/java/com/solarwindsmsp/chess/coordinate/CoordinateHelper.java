@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 
 public class CoordinateHelper {
 
-    public Coordinate getCoordinateMock(int x, int y) {
+    public static Coordinate getCoordinateMock(int x, int y) {
         Coordinate coordinate = mock(Coordinate.class);
         when(coordinate.getX()).thenReturn(x);
         when(coordinate.getY()).thenReturn(y);

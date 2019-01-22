@@ -10,12 +10,10 @@ import static org.junit.Assert.assertNull;
 public class PositionTest {
 
     private Position testSubject;
-    private PieceHelper pieceHelper;
 
     @Before
     public void setUp() {
         testSubject = new Position();
-        pieceHelper = new PieceHelper();
     }
 
     @Test
@@ -25,7 +23,7 @@ public class PositionTest {
 
     @Test
     public void getPieceFromPosition() {
-        IPiece pawn = pieceHelper.getPieceMock(PieceType.PAWN, PieceColor.WHITE);
+        IPiece pawn = PieceHelper.getPieceMock(PieceType.PAWN, PieceColor.WHITE);
         testSubject.setPiece(pawn);
 
         assertEquals(pawn, testSubject.getPiece());

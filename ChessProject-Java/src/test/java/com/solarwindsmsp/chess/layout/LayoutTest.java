@@ -21,8 +21,8 @@ public class LayoutTest {
 
     @Before
     public void setUp() {
-        this.testSubject = new Layout(8, 8);
-        this.pieceFactory = PieceFactory.getInstance();
+        testSubject = new Layout(8, 8);
+        pieceFactory = PieceFactory.getInstance();
     }
 
     @Test

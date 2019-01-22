@@ -11,7 +11,7 @@ public class CoordinateTest {
 
     @Before
     public void setUp() {
-        this.testSubject = new Coordinate(1, 0);
+        testSubject = new Coordinate(1, 0);
     }
 
     @Test
